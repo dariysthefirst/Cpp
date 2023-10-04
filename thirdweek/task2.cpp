@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -9,40 +10,40 @@ int main() {
   cin >> month;
   switch (month) {
       case 1: 
-      cout << "January/" << "Січень";
+      cout << "January/Січень";
       break;
        case 2: 
-      cout << "February/" << "Лютий";
+      cout << "February/Лютий";
       break;
        case 3: 
-      cout << "March/" << "Березеньь";
+      cout << "March/Березеньь";
       break;
        case 4: 
-      cout << "April/" << "Квітень";
+      cout << "April/Квітень";
       break;
        case 5: 
-      cout << "May/" << "Травень";
+      cout << "May/Травень";
       break;
        case 6: 
-      cout << "June/" << "Червень";
+      cout << "June/Червень";
       break;
        case 7: 
-      cout << "July/" << "Липень";
+      cout << "July/Липень";
       break;
        case 8: 
-      cout << "August/" << "Серпень";
+      cout << "August/Серпень";
       break;
        case 9: 
-      cout << "September/" << "Вересень";
+      cout << "September/Вересень";
       break;
        case 10: 
-      cout << "October/" << "Жовтень";
+      cout << "October/Жовтень";
       break;
        case 11: 
-      cout << "November/" << "Листопад";
+      cout << "November/Листопад";
       break;
        case 12: 
-      cout << "December/" << "Грудень";
+      cout << "December/Грудень";
       break;
     }
   }
