@@ -11,7 +11,7 @@ int main() {
   }
   cout << "initial array: ";
   for (int i = 0; i < length; i++) {
-    cout << array[i] << ";";
+    cout << array[i] << "; ";
   }
   cout << endl;
 
@@ -30,7 +30,7 @@ int main() {
   }
   cout << "final array: ";
   for (int i = 0; i < length; i++) {
-    cout << array[i] << ";";
+    cout << array[i] << "; ";
   }
   cout << endl;
 }
