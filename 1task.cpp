@@ -9,8 +9,13 @@ int minutes;
 int main() {
   Date time;
   Date timeAfter;
+  int totalMin;
+  int newHours;
+  int newMin;
+  
   cout << "enter time of the start: ";
   cin >> time.hours >> time.minutes;
+  
   if(time.hours > 24 || time.minutes > 60){
     cout << "invalid input.";
     return 0;
@@ -18,10 +23,12 @@ int main() {
   cout << "enter how much time has passed since the start: ";
   cin >> timeAfter.minutes;
 
-  time.minutes += timeAfter.minutes;
-  if(time.minutes > 60){
-    time.hours += 1;
-    time.minutes -= 60;
-  }
-  cout << "the time is: " << time.hours << ":" << time.minutes;
+  totalMin = time.hours * 60 + time.minutes + timeAfter.minutes;
+  newHours = (totalMin / 60) % 24;
+  newMin = totalMin % 60;
+
+  if(newMin < 10)
+    cout << "the time is: " << newHours << ":0" << newMin;
+  else
+    cout << "the time is: " << newHours << ":" << newMin;
 }
