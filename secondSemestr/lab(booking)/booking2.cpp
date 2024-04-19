@@ -33,9 +33,11 @@ public:
     if (n >= 0) {
       reserved += n;
       upd_percentage();
-      if(percentage <= 105.0){
-        return true;
+      if(percentage > 105.0){
+        reserved -= n;
+        return false;
       }
+      return true;
   }
     return false;
   }
@@ -63,11 +65,11 @@ int main() {
   cout << endl;
   flight_booking booking_1(1, capacity, reserved);
   booking_1.print_status();
- 
+
   while (command != 3){
     cout << "What would you like to do?(please enter number of command)" << endl << "1. Add reservations" << endl << "2. Cancel reservations" << endl << "3. Quit" << endl;
     cin >> command;
-    
+
     switch(command){
       case 1:
       int n;
