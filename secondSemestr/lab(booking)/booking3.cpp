@@ -1,6 +1,7 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <limits>
 
 using namespace std;
 
@@ -82,6 +83,12 @@ int main() {
          << "5. Print all flights" << endl
          << "6. Quit" << endl;
     cin >> command;
+    if (cin.fail()) {
+        cin.clear();  
+        cin.ignore(numeric_limits<int>::max(), '\n'); 
+        cout << "Invalid input. Please enter a number." << endl;
+        continue; 
+    }
     switch (command) {
     case 1:
       cout << "Enter flight id and capacity: ";

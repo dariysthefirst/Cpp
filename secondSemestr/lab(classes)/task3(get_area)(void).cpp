@@ -5,7 +5,7 @@ class Square {
 private: 
   double side; 
 bool area_needed; 
- 
+
 public: 
   Square(double side) {  
     this->side = side; 
@@ -32,10 +32,12 @@ int main() {
   Square s1(6); 
   Square s2(7); 
   s1.get_area(); 
-   s2.set_side(6); 
+  s1.set_side(6); 
   s1.get_area(); 
   s2.get_area(); 
   s2.set_side(12); 
   s2.get_area(); 
-   
+
 }
+
+area(void)

@@ -14,12 +14,17 @@ int main(void) {
   float r, a, b;
   cout << "Enter a and b: ";
   while (cin >> a) {
-    cin >> b;
-    try {
+    try{
+      cin >> b;
+      if(cin.fail()){
+        throw invalid_argument("Invalid input!");
+      }
       r = internaldiv(a, b);
       cout << "The result: " << fixed << setprecision(2) << r << endl;
     } catch (const invalid_argument &exc) {
       cout << exc.what() << endl;
+      cin.clear();
+      cin.ignore();
     }
   }
   return 0;

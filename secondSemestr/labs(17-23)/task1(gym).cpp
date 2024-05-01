@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <limits>
 
 using namespace std;
 class gym_membershipsubs {
@@ -84,42 +85,50 @@ int main() {
          << "\n 5.Print all members"
          << "\n 6.Quit" << endl;
     cin >> command;
-    switch (command) {
-    case 1:
-      cout << "Enter the id(1 - 10): ";
-      cin >> id;
-      if (id > length) {
-        cout << "You are out of range." << endl;
+      if (cin.fail()) {
+          cin.clear();  
+          cin.ignore(numeric_limits<int>::max(), '\n'); 
+          cout << "Invalid input. Please enter a number." << endl;
+          continue; 
+      }
+      switch (command) {
+      case 1:
+        cout << "Enter the id(1 - 10): ";
+        cin >> id;
+        if (id > length) {
+          cout << "You are out of range." << endl;
+          break;
+        } else {
+          cout << "Enter the name: ";
+          cin >> name;
+          members[id - 1].create_member(id, name);
+        }
         break;
-      } else {
-        cout << "Enter the name: ";
-        cin >> name;
-        members[id - 1].create_member(id, name);
+      case 2:
+        cout << "Enter the member`s id: ";
+        cin >> id;
+        cout << "Enter the number of months to extend: ";
+        cin >> months;
+        members[id - 1].extend_subs(id, months);
+        break;
+      case 3:
+        cout << "Enter the member`s id: ";
+        cin >> id;
+        members[id - 1].cancel_subs(id);
+        break;
+      case 4:
+        cout << "Enter the member`s id to delete: ";
+        cin >> id;
+        members[id - 1].delete_member(id);
+        members[id - 1] = gym_membershipsubs();
+        break;
+      case 5:
+        for (int i = 0; i < length; i++) {
+          members[i].print_members();
+        }
+        break;
       }
-      break;
-    case 2:
-      cout << "Enter the member`s id: ";
-      cin >> id;
-      cout << "Enter the number of months to extend: ";
-      cin >> months;
-      members[id - 1].extend_subs(id, months);
-      break;
-    case 3:
-      cout << "Enter the member`s id: ";
-      cin >> id;
-      members[id - 1].cancel_subs(id);
-      break;
-    case 4:
-      cout << "Enter the member`s id to delete: ";
-      cin >> id;
-      members[id - 1].delete_member(id);
-      members[id - 1] = gym_membershipsubs();
-      break;
-    case 5:
-      for (int i = 0; i < length; i++) {
-        members[i].print_members();
-      }
-      break;
-    }
+    } 
   }
-}
+
+gym

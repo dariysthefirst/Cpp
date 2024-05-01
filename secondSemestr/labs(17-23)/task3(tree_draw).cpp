@@ -3,8 +3,7 @@ using namespace std;
 
 class tree {
 public:
-  virtual void draw() = 0 {
-  }
+  virtual void draw() = 0;
 };
 class oak : public tree {
 public:
