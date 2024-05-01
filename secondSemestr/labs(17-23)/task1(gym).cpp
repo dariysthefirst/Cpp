@@ -69,8 +69,7 @@ public:
   }
 };
 int main() {
-  int length = 3;
-  int count;
+  int length = 10;
   gym_membershipsubs members[length];
   int id = 0;
   string name = "";

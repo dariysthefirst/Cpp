@@ -38,7 +38,7 @@ private:
     }
     if (dotCount == 3) {
       for (int j = 0; j < 4; j++) {
-        if (ipNums[j] <= 0 && ipNums[j] >= 255) {
+        if (ipNums[j] <= 0 || ipNums[j] >= 255) {
           return false;
         }
       }
